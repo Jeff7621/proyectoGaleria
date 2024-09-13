@@ -56,6 +56,28 @@ namespace proyectoGaleria
         }
 
 
+        //Tabla usuario
+        public Task<List<Usuario>> Getlista_usuario()
+        {
+            return _database.Table<Usuario>().ToListAsync();
+        }
+
+        public Task<int> GetGuardarUsuario(Usuario usuario)
+        {
+            return _database.InsertAsync(usuario);
+        }
+
+        public Task<int> GetEliminarUsuario(Usuario usuario)
+        {
+            return _database.DeleteAsync(usuario);
+        }
+
+        public Task<int> GetEditarUsuario(Usuario usuario)
+        {
+            return _database.UpdateAsync(usuario);
+        }
+
+
 
     }
 }
