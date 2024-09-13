@@ -12,13 +12,13 @@ namespace proyectoGaleria
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        [Unique, NotNull]
+        [NotNull]
         public string NombreUsuario { get; set; }//Nombre de usuario
 
         [Unique, NotNull]
         public string Email { get; set; }//Email de usuario
 
-        [Unique]
+     
         public string Contraseña { get; set; }//Contraseño de usuario
     }
 }

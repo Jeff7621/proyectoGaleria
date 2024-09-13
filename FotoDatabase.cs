@@ -19,6 +19,7 @@ namespace proyectoGaleria
             _database.CreateTableAsync<Usuario>().Wait();
         }
 
+        //Autenticacion
         public Task<int> SaveUsuarioAsync(Usuario usuario)
         {
             return _database.InsertAsync(usuario);
@@ -36,6 +37,22 @@ namespace proyectoGaleria
             return _database.Table<Usuario>()
                             .Where(u => u.Email == email)
                             .FirstOrDefaultAsync();
+        }
+
+        //Tabla de Fotos
+        public Task<List<Foto>> GetFotosAsync()
+        {
+            return _database.Table<Foto>().ToListAsync();
+        }
+
+        public Task<int> SaveFotoAsync(Foto foto)
+        {
+            return _database.InsertAsync(foto);
+        }
+
+        public Task<int> DeleteFotoAsync(Foto foto)
+        {
+            return _database.DeleteAsync(foto);
         }
 
 
