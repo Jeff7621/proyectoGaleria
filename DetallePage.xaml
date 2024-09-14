@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Galleria.DetallePage"
+             >
+    <ScrollView>
+        <StackLayout>
+
+            <Frame BackgroundColor="#EFEFEF"
+                   HeightRequest="650" 
+                   WidthRequest="350">
+
+                <Grid HorizontalOptions="FillAndExpand" 
+                      RowSpacing="30">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="220"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Image Grid.Row="0" 
+                           x:Name="DetalleImagen" 
+                           HeightRequest="300" 
+                           WidthRequest="330"/>
+
+                    <Label Grid.Row="1" 
+                           Text="Nombre de la imagen :" 
+                           TextColor="Black" 
+                           FontSize="20" 
+                           HorizontalOptions="Center"/>
+                    
+                    <Label Grid.Row="2"  
+                           x:Name="DetalleNombre" 
+                           FontSize="Subtitle" 
+                           HorizontalOptions="Center" 
+                           TextColor="Black"/>
+
+                    <Label Grid.Row="3"  
+                           x:Name="DetalleFecha" 
+                           FontSize="Subtitle" 
+                           HorizontalOptions="Center" 
+                           TextColor="Black"/>
+
+                    <Button Grid.Row="4" 
+                            Text="Eliminar Foto" 
+                            Clicked="OnEliminarFotoClicked" 
+                            BackgroundColor="Black" 
+                            TextColor="white"
+                            VerticalOptions="Center" 
+                            HorizontalOptions="Center"
+                            HeightRequest="40" 
+                            WidthRequest="300"/>
+
+                </Grid>
+
+            </Frame>
+            
+        </StackLayout>
+        
+    </ScrollView>
+
+</ContentPage>
